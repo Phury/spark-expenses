@@ -1,0 +1,19 @@
+<div class="panel">
+    <div class="panel-body">
+        <form method="post" action="/expense/add">
+            <label for="detail">detail:</label>
+            <input type="text" name="detail" value="" />
+            <br />
+            <label for="amount.value">value:</label>
+            <input type="text" name="amount.value" value="" />
+            <br />
+            <label for="timestamp">date:</label>
+            <input type="text" name="timestamp" value="dd/MM/yyyy" />
+            <br />
+            <label for="types.list">types:</label>
+            <input type="text" name="types.list" value="comma separated value..." />
+            <br />
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+    </div>
+</div>

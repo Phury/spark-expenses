@@ -1,0 +1,53 @@
+<div class="ease-trigger">
+    <div class="panel">
+        <div class="panel-body">
+            <form method="post" action="/expense/delete" id="delete-expenses-form">
+                <div class="t-action">
+                    <a href="/expense/add">add</a>
+                    <input type="submit" name="delete.expense" value="delete selected" />
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="expense" value="select_all"</th>
+                            <th>Expense</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    #foreach($expense in $expenses)
+                        <tr>
+                            <td><input type="checkbox" name="expense" value="$expense.uuid"></td>
+                            <td><a href="/expense/$expense.uuid">$expense.amount.value $expense.amount.currency</a></td>
+                            <td>#foreach($type in $expense.types)<a href="/expense/find/type/$type">$type</a> #end</td>
+                            <td>$expense.timestampAsString</td>
+                        </tr>
+                    #end
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="panel ease-in-out">
+    <div class="panel">
+    <div class="panel-body">
+        <form method="post" action="/expense/add">
+            <label for="detail">detail:</label>
+            <input type="text" name="detail" value="" />
+            <br />
+            <label for="amount.value">value:</label>
+            <input type="text" name="amount.value" value="" />
+            <br />
+            <label for="timestamp">date:</label>
+            <input type="text" name="timestamp" value="dd/MM/yyyy" />
+            <br />
+            <label for="types.list">types:</label>
+            <input type="text" name="types.list" value="comma separated value..." />
+            <br />
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+    </div>
+</div>
+    </div>
+</div>

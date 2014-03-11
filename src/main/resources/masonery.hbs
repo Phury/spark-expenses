@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>{{title}}</title>
+    <!--
+    <link href="/vendors/bootstrap.css" rel="stylesheet"  />
+    <link href="/vendors/bootstrap-theme.css" rel="stylesheet"  />
+    <link href="/vendors/jquery.gridster.css" rel="stylesheet"  />
+    -->
+<style>
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+    /*
+    margin: 3em;
+    padding: 3em;
+    */
+    background: #004756;
+}
+.masonry {
+}
+
+.masonry .item, .grid-sizer {
+  height: 60px;
+  margin-bottom: 5px;
+  float: left;
+  background: #FFF;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.grid-sizer, .item { width: 20%; }
+.item.w2 { width:  25%; }
+.item.w3 { width:  40%; }
+.item.w4 { width:  50%; }
+
+.item.h2 { height: 100px; }
+.item.h3 { height: 130px; }
+.item.h4 { height: 180px; }
+
+</style>
+</head>
+<body>
+<div class="masonry js-masonry"  data-masonry-options='{ "columnWidth": ".grid-sizer", "gutter": 5   }'>
+    <div class="grid-sizer">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item w3">item</div>
+</div>
+
+
+<script src="/vendors/jquery-1.11.0.js"></script>
+<script src="/vendors/masonry.pkgd.min.js"></script>
+<!--
+<script type="text/javascript">
+$( document ).ready(function() {
+    var container = document.querySelector('.masonery');
+    var msnry = new Masonry( container, {
+      columnWidth: 60,
+      itemSelector: '.item'
+    });
+});
+</script>
+-->

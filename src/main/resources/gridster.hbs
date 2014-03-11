@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>{{title}}</title>
+    <link href="/vendors/bootstrap.css" rel="stylesheet"  />
+    <link href="/vendors/bootstrap-theme.css" rel="stylesheet"  />
+    <link href="/vendors/jquery.gridster.css" rel="stylesheet"  />
+<style>
+body {
+    margin: 3em;
+    padding: 3em;
+    background: #004756;
+}
+.gridster { margin: auto; }
+.gridster ul li { list-style-type: none; }
+.gridster ul li {
+    background: #FFF;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body>
+<div class="gridster">
+    <ul id="hello">
+        <li id="li1" data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li id="li2" data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li id="li3" data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li id="li4" data-row="4" data-col="1" data-sizex="2" data-sizey="1"></li>
+        <li id="li5" data-row="1" data-col="2" data-sizex="1" data-sizey="1"></li> 
+        <li id="li6" data-row="2" data-col="2" data-sizex="1" data-sizey="1"></li>
+        <li id="li7" data-row="3" data-col="2" data-sizex="1" data-sizey="1"></li>
+
+        <li id="li8" data-row="1" data-col="3" data-sizex="2" data-sizey="1"></li> 
+        <li id="li9" data-row="2" data-col="3" data-sizex="2" data-sizey="1"></li>
+        <li id="li10" data-row="3" data-col="3" data-sizex="2" data-sizey="1"></li>
+        <li id="li11" data-row="4" data-col="3" data-sizex="2" data-sizey="1"></li>
+
+        <li id="li12" data-row="1" data-col="5" data-sizex="2" data-sizey="1"></li>
+        <li id="li13" data-row="2" data-col="5" data-sizex="2" data-sizey="1"></li>
+        <li id="li14" data-row="3" data-col="5" data-sizex="2" data-sizey="1"></li>
+        <li id="li15" data-row="4" data-col="5" data-sizex="1" data-sizey="1"></li>
+        <li id="li16" data-row="4" data-col="6" data-sizex="1" data-sizey="1"></li>
+
+        <li id="li17" data-row="1" data-col="8" data-sizex="2" data-sizey="1"></li>
+        <li id="li18" data-row="2" data-col="8" data-sizex="2" data-sizey="1"></li>
+        <li id="li19" data-row="3" data-col="8" data-sizex="2" data-sizey="1"></li>
+        <li id="li20" data-row="4" data-col="8" data-sizex="1" data-sizey="1"></li>
+        <li id="li21" data-row="4" data-col="9" data-sizex="1" data-sizey="1"></li>
+    </ul>
+</div>
+
+
+<script src="/vendors/jquery-1.11.0.js"></script>
+<script src="/vendors/jquery.gridster.with-extras.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+    $(".gridster > ul").gridster({
+        widget_base_dimensions: [110, 110],
+        widget_margins: [3, 3],
+        draggable: {
+          handle: 'header'
+        }
+    });
+
+    var form = $('#delete-expenses-form');
+    $('.gridster ul li:nth-child(5)').append(form.clone());
+    form.remove();
+});
+</script>

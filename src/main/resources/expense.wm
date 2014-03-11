@@ -1,0 +1,13 @@
+<div class="panel">
+    <div class="panel-body">
+        <dl>
+            <dt>uuid:</dt><dd>$expense.uuid</dd>
+            <dt>amount:</dt><dd>$expense.amount.value $expense.amount.currency</dd>
+            #if($expense.detail)<dt> detail:</dt><dd>$expense.detail #end</dd>
+            <dt>types:</dt><dd>#foreach($type in $expense.types) $type #end</dd>
+            <dt>date:</dt><dd>$expense.timestampAsString</dd>
+        </dl>
+        <a href="/expense">return</a>
+        <a href="/expense/add">add new</a>
+    </div>
+</div>
